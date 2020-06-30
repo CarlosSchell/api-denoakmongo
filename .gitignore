@@ -1,2 +1,3 @@
 .deno_plugins
+data/*.*
 notas.txt
