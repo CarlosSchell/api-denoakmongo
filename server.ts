@@ -7,7 +7,7 @@ import { Application, Router } from "https://deno.land/x/oak/mod.ts"
 import {getPublicacoes, createPublicacao, getSinglePublicacao, updatePublicacao, deletePublicacao} from './routes.ts'
 
 const env = config()
-console.log(env)
+//console.log(env)
 
 const router = new Router()
 
