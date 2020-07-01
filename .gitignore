@@ -1,4 +1,3 @@
 .deno_plugins
 .env
-data/*.*
 notas.txt
