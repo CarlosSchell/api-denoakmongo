@@ -1,4 +1,6 @@
 .deno_plugins
+.git
+data/*.*
 .env
 *.txt
 tsconfig.json
