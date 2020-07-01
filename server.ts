@@ -1,15 +1,13 @@
 /*jshint esversion: 6 */
 
+import { config } from "https://deno.land/x/dotenv/mod.ts"
+import "https://deno.land/x/dotenv/load.ts";
+
 import { Application, Router } from "https://deno.land/x/oak/mod.ts"
 import {getPublicacoes, createPublicacao, getSinglePublicacao, updatePublicacao, deletePublicacao} from './routes.ts'
 
-import { config } from "https://deno.land/x/dotenv/mod.ts";
-
 const env = config()
-
-console.log(env.DB_HOST_URL)
-console.log(env.DB_NAME)
-console.log(env.PORT)
+console.log(env)
 
 const router = new Router()
 
@@ -27,7 +25,7 @@ const app = new Application()
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-const port = env.PORT || 8000
+const port = Deno.env.get('PORT') || 8000
 
 //app.listen({port: port})
 //console.log('O Servidor está ativo e rodando na porta : ${port}' )
