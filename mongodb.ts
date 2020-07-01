@@ -1,4 +1,3 @@
-// 
 import { MongoClient } from "https://deno.land/x/mongo@v0.8.0/mod.ts"
 
 const MONGO_URL = Deno.env.get('MONGODB_URI') || 'mongodb://localhost:27017'
