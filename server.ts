@@ -25,7 +25,7 @@ const app = new Application()
 
 app.use(
   oakCors({
-    origin: "https://api-denoakmongo.herokuapp.com/api/"
+    origin: "https://pesquisajus.com.br"
   }),
 );
 
