@@ -1,9 +1,8 @@
-//
-import "https://deno.land/x/dotenv/load.ts";
-import { oakCors } from "https://deno.land/x/cors/mod.ts";
-
-
 import { Application, Router } from "https://deno.land/x/oak/mod.ts"
+import { oakCors } from "https://deno.land/x/cors/mod.ts"
+import { config } from "https://deno.land/x/dotenv/mod.ts"
+import "https://deno.land/x/dotenv/load.ts"
+
 import {getPublicacoes, createPublicacao, getSinglePublicacao, updatePublicacao, deletePublicacao} from './routes.ts'
 
 const env = config()
@@ -23,11 +22,8 @@ router
   
 const app = new Application()
 
-app.use(
-  oakCors({
-    origin: "https://pesquisajus.com.br"
-  }),
-);
+app.use( oakCors( {origin: "https://pesquisajus.com.br"} ), );
+//app.use(oakCors());
 
 app.use(router.routes())
 app.use(router.allowedMethods())
