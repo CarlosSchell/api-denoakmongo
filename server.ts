@@ -1,5 +1,7 @@
 import { config } from "https://deno.land/x/dotenv/mod.ts"
 import "https://deno.land/x/dotenv/load.ts";
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
+
 
 import { Application, Router } from "https://deno.land/x/oak/mod.ts"
 import {getPublicacoes, createPublicacao, getSinglePublicacao, updatePublicacao, deletePublicacao} from './routes.ts'
@@ -20,6 +22,13 @@ router
   //.delete('/api/:id', deletePublicacao)
   
 const app = new Application()
+
+app.use(
+  oakCors({
+    origin: "https://api-denoakmongo.herokuapp.com/api/"
+  }),
+);
+
 app.use(router.routes())
 app.use(router.allowedMethods())
 
