@@ -9,4 +9,7 @@ const databaseName = Deno.env.get('DB_NAME') || 'tjsp'
 
 const db = client.database(databaseName)
 
+console.log(MONGO_URL )
+console.log('O Banco de Dados está conectado em : ' + databaseName )
+
 export default db

@@ -2,6 +2,7 @@ import { RouterContext } from "https://deno.land/x/oak/mod.ts"
 import db from "./mongodb.ts"
 
 const publicacoesCollection = db.collection("publicacoes")
+console.log('Está em uso o arquivo de dados : publicacoes')
 
 const getPublicacoes = async (ctx: RouterContext) => {
   // Get Publicacoes from MongoDB

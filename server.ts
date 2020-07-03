@@ -25,8 +25,6 @@ app.use(router.allowedMethods())
 
 const port = Deno.env.get('PORT') || 8000
 
-//app.listen({port: port})
-//console.log('O Servidor está ativo e rodando na porta : ${port}' )
+console.log('O Servidor está ativo e rodando na porta ' + port)
 
-console.log(`O Servidor está ativo e rodando na porta : ${port}`)
 await app.listen({port: +port});
