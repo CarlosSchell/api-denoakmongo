@@ -22,7 +22,7 @@ router
   
 const app = new Application()
 
-app.use( oakCors( {origin: "https://pesquisajus.com.br/api/"} ), );
+app.use( oakCors( {origin: "https://pesquisajus.com.br"} ) )
 //app.use(oakCors())
 
 app.use(router.routes())
