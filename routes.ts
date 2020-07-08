@@ -15,7 +15,7 @@ const getPublicacoes = async (ctx: RouterContext) => {
 const getSinglePublicacao = async (ctx: RouterContext) => {
   const id = ctx.params.id;
   // Get single publicacao
-  const publicacao = await publicacoesCollection.findOne({ _id: { $oid: id } })
+  const publicacao = await publicacoesCollection.findOne({ processo: { $processo: id } })
 
   // Return output
   ctx.response.body = publicacao;
@@ -32,7 +32,7 @@ const createPublicacao = async (ctx: RouterContext) => {
   // Insert Note in MongoDB
   const id = await publicacoesCollection.insertOne(publicacao);
 
-  publicacao._id = id
+  publicacao.processo = id
   // Return with success response
   ctx.response.status = 201
   ctx.response.body = publicacao
