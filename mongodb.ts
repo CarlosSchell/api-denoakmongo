@@ -5,7 +5,7 @@ const MONGO_URL = Deno.env.get('MONGODB_URI') || 'mongodb://localhost:27017'
 const client = new MongoClient()
 client.connectWithUri(MONGO_URL)
 
-const databaseName = Deno.env.get('DB_NAME') || 'tjsp'
+const databaseName = Deno.env.get('DB_NAME') || 'tjrs'
 
 const db = client.database(databaseName)
 
